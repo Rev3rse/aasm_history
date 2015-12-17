@@ -12,7 +12,7 @@ module AasmHistory
       end
 
       def klass
-        @klass ||= AASM::StateMachine[@object.class].config.history_class.constantize
+        @klass ||= AASM::StateMachine[@object.class][:default].config.history_class.constantize
       end
 
       def attributes
